@@ -158,7 +158,7 @@ class DoublyLinkedList {
   /**
    * @displays the values of the linked list
    */
-  getList() {
+  toArray() {
     let list = [];
     let nodeToDisplay = this.root;
     while (nodeToDisplay) {
@@ -167,6 +167,21 @@ class DoublyLinkedList {
     }
 
     return list;
+  }
+
+  forEach(callback) {
+    let node = this.root;
+    if (!node) {
+      callback(null, null, null, null);
+      return;
+    }
+
+    let index = 0;
+    while (node) {
+      callback(node.value, index);
+      node = node.next;
+      index += 1;
+    }
   }
 }
 
