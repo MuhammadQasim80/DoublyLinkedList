@@ -156,7 +156,7 @@ class DoublyLinkedList {
   }
 
   /**
-   * @displays the values of the linked list
+   * @returns an array of linked list values
    */
   toArray() {
     let list = [];
@@ -169,10 +169,15 @@ class DoublyLinkedList {
     return list;
   }
 
+  /**
+   *
+   * @param {Function} callback to be called against each node of the linked list
+   * @iterates over all nodes of the linked list
+   */
   forEach(callback) {
     let node = this.root;
     if (!node) {
-      callback(null, null, null, null);
+      callback(null, null);
       return;
     }
 
